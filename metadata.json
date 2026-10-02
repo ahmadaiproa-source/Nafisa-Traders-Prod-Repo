@@ -1,0 +1,6 @@
+{
+  "name": "Nafisa Traders",
+  "description": "Delivering Quality Healthcare Solutions Nationwide - Importer, Manufacturer and Distributor of Medicines and Surgical Disposables in Pakistan",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

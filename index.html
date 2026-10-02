@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var origFetch = window.fetch;
+          var curFetch = typeof origFetch === 'function' ? origFetch.bind(window) : origFetch;
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: function() { return curFetch; },
+              set: function(fn) { curFetch = fn; },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (e1) {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() { return curFetch; },
+                set: function(fn) { curFetch = fn; },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nafisa Traders | Healthcare & Medical Products Distributor Pakistan</title>
+    <meta name="description" content="Nafisa Traders is an importer, manufacturer and distributor of medicines, surgical disposables and healthcare products serving institutions across Pakistan." />
+    <link rel="icon" type="image/jpeg" href="https://ik.imagekit.io/sn0ctq5wd/Nafisa%20Trader.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#06316F" />
+  </head>
+  <body class="bg-[#F8F9FA] text-[#1F2937] antialiased selection:bg-[#339719]/20 selection:text-[#06316F]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
